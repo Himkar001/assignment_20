@@ -1,0 +1,125 @@
+PART A: PYTHON IMPLEMENTATION USING LOOPS, *ARGS AND **KWARGS
+
+  --------------------------------
+  1. LIST OPERATIONS USING LOOPS
+  --------------------------------
+
+(a) Find Maximum and Minimum Element
+
+Code: lst = [4, 7, 2, 9, 1, 5]
+
+max_val = lst[0] min_val = lst[0]
+
+for i in lst: if i > max_val: max_val = i if i < min_val: min_val = i
+
+print(“Maximum:”, max_val) print(“Minimum:”, min_val)
+
+Output: Maximum: 9 Minimum: 1
+
+(b) Count Frequency of Each Element
+
+Code: lst = [1, 2, 2, 3, 1, 4, 2]
+
+freq = {}
+
+for i in lst: if i in freq: freq[i] = freq[i] + 1 else: freq[i] = 1
+
+print(“Frequency:”, freq)
+
+Output: Frequency: {1: 2, 2: 3, 3: 1, 4: 1}
+
+  --------------------------
+  2. WHILE LOOP OPERATIONS
+  --------------------------
+
+(a) Reverse a Number
+
+Code: num = 123 rev = 0
+
+while num > 0: digit = num % 10 rev = rev * 10 + digit num = num // 10
+
+print(“Reversed:”, rev)
+
+Output: Reversed: 321
+
+(b) Check Palindrome
+
+Code: num = 121 original = num rev = 0
+
+while num > 0: digit = num % 10 rev = rev * 10 + digit num = num // 10
+
+if original == rev: print(“Palindrome”) else: print(“Not Palindrome”)
+
+Output: Palindrome
+
+  --------------------------
+  3. TUPLES AND DICTIONARY
+  --------------------------
+
+(a) Convert List of Tuples to Dictionary
+
+Code: tuple_list = [(“a”, 1), (“b”, 2), (“c”, 3)]
+
+result = {}
+
+for item in tuple_list: key = item[0] value = item[1] result[key] =
+value
+
+print(“Dictionary:”, result)
+
+Output: Dictionary: {‘a’: 1, ‘b’: 2, ‘c’: 3}
+
+(b) Find Key with Highest Value
+
+Code: d = {“a”: 10, “b”: 25, “c”: 15}
+
+max_key = None max_val = None
+
+for key in d: if max_val is None or d[key] > max_val: max_val = d[key]
+max_key = key
+
+print(“Highest Value Key:”, max_key)
+
+Output: Highest Value Key: b
+
+  -------------------------
+  4. FUNCTION USING *ARGS
+  -------------------------
+
+Code: def calc(*args): total = 0 count = 0
+
+    for i in args:
+        total = total + i
+        count = count + 1
+
+    avg = total / count if count != 0 else 0
+    return total, avg
+
+print(calc(10, 20, 30))
+
+Output: (60, 20.0)
+
+  ----------------------------
+  5. FUNCTION USING **KWARGS
+  ----------------------------
+
+Code: def top_student(**kwargs): max_name = None max_marks = None
+
+    for name in kwargs:
+        if max_marks is None or kwargs[name] > max_marks:
+            max_marks = kwargs[name]
+            max_name = name
+
+    return max_name, max_marks
+
+print(top_student(Aman=85, Ravi=92, Sita=88))
+
+Output: (‘Ravi’, 92)
+
+  ------------
+  CONCLUSION
+  ------------
+
+In this part, we implemented various Python programs using loops only
+without using built-in functions like max(), min(), sum(), or dict(). We
+also explored the use of *args and **kwargs to handle flexible inputs.

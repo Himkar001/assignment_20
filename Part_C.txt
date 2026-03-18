@@ -1,0 +1,72 @@
+PART C — INTERVIEW READY
+
+  --------------------------------------------
+  Q1 — Difference between *args and **kwargs
+  --------------------------------------------
+
+*args: - Used to pass multiple positional arguments - Stored as a
+tuple - Useful when number of inputs is unknown
+
+**kwargs: - Used to pass multiple keyword arguments (key=value) - Stored
+as a dictionary - Useful when arguments have names
+
+Example: def example(*args, **kwargs): print(“Args:”, args)
+print(“Kwargs:”, kwargs)
+
+example(1, 2, 3, name=“Himkar”, age=21)
+
+Output: Args: (1, 2, 3) Kwargs: {‘name’: ‘Himkar’, ‘age’: 21}
+
+  -----------------------------------
+  Q2 — Student Class Implementation
+  -----------------------------------
+
+Code: class Student: def init(self, name, marks): self.name = name
+self.marks = marks
+
+    def calculate_grade(self):
+        if self.marks >= 80:
+            return "A"
+        elif self.marks >= 60:
+            return "B"
+        else:
+            return "C"
+
+    def __str__(self):
+        grade = self.calculate_grade()
+        return f"Name: {self.name}, Marks: {self.marks}, Grade: {grade}"
+
+Test Case: s1 = Student(“Himkar”, 85) print(s1)
+
+Output: Name: Himkar, Marks: 85, Grade: A
+
+  ---------------------
+  Q3 — Dunder Methods
+  ---------------------
+
+Definition: Dunder (Double Underscore) methods are special methods in
+Python used to customize object behavior.
+
+Importance: - Enable operator overloading - Improve readability - Allow
+objects to behave like built-in types
+
+Examples: 1. init → Constructor 2. str → String representation 3. add →
+Defines + operator
+
+Example Code: class Demo: def init(self, x): self.x = x
+
+    def __str__(self):
+        return f"Value is {self.x}"
+
+d = Demo(10) print(d)
+
+Output: Value is 10
+
+  ------------
+  CONCLUSION
+  ------------
+
+In this part, we explored key Python interview concepts including *args,
+**kwargs, class implementation, and dunder methods. These concepts are
+essential for writing flexible, readable, and object-oriented Python
+programs.

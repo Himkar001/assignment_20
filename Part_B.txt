@@ -1,0 +1,90 @@
+PART B: STRETCH PROBLEM – CUSTOM VECTOR CLASS
+
+  ------------------------------------------------------------
+  OBJECTIVE: Create a custom Vector class using tuples and
+  implement dunder methods.
+  ------------------------------------------------------------
+  CODE IMPLEMENTATION:
+
+  ------------------------------------------------------------
+
+class Vector: def init(self, values): self.values = values
+
+    # Vector Addition
+    def __add__(self, other):
+        result = []
+        for i in range(len(self.values)):
+            result.append(self.values[i] + other.values[i])
+        return Vector(tuple(result))
+
+    # Vector Subtraction
+    def __sub__(self, other):
+        result = []
+        for i in range(len(self.values)):
+            result.append(self.values[i] - other.values[i])
+        return Vector(tuple(result))
+
+    # Scalar Multiplication
+    def __mul__(self, scalar):
+        result = []
+        for i in range(len(self.values)):
+            result.append(self.values[i] * scalar)
+        return Vector(tuple(result))
+
+    # Readable Output
+    def __repr__(self):
+        return f"Vector{self.values}"
+
+  -------------
+  TEST CASES:
+  -------------
+
+v1 = Vector((1, 2, 3)) v2 = Vector((4, 5, 6))
+
+print(“Vector 1:”, v1) print(“Vector 2:”, v2)
+
+Addition
+
+print(“Addition:”, v1 + v2)
+
+Subtraction
+
+print(“Subtraction:”, v1 - v2)
+
+Scalar Multiplication
+
+print(“Scalar Multiplication (v1 * 3):”, v1 * 3)
+
+  ---------
+  OUTPUT:
+  ---------
+
+Vector 1: Vector(1, 2, 3) Vector 2: Vector(4, 5, 6)
+
+Addition: Vector(5, 7, 9) Subtraction: Vector(-3, -3, -3) Scalar
+Multiplication (v1 * 3): Vector(3, 6, 9)
+
+  -------------------
+  EXTRA TEST CASES:
+  -------------------
+
+v3 = Vector((10, 20)) v4 = Vector((5, 2))
+
+print(“Addition:”, v3 + v4) print(“Subtraction:”, v3 - v4) print(“Scalar
+Multiplication:”, v4 * 2)
+
+  ---------
+  OUTPUT:
+  ---------
+
+Addition: Vector(15, 22) Subtraction: Vector(5, 18) Scalar
+Multiplication: Vector(10, 4)
+
+  -------------
+  CONCLUSION:
+  -------------
+
+In this problem, we created a custom Vector class and implemented dunder
+methods like add, sub, mul, and repr to perform vector operations. The
+class behaves like real mathematical vectors and supports clean and
+readable output.

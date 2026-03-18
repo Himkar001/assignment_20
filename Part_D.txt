@@ -1,0 +1,77 @@
+PART D — AI-AUGMENTED TASK
+
+  -----------------------
+  1. PROMPT GIVEN TO AI
+  -----------------------
+
+Explain Python dunder methods with examples for beginners and include a
+custom class implementation.
+
+  ------------------------------------
+  2. AI RESPONSE (DOCUMENTED OUTPUT)
+  ------------------------------------
+
+Dunder methods (also called special methods) in Python are methods with
+double underscores before and after their names, such as init, str, and
+add.
+
+They allow developers to define how objects behave with built-in
+operations.
+
+Common Examples:
+
+1.  init
+    -   Constructor method
+    -   Runs automatically when an object is created
+2.  str
+    -   Defines what gets printed when using print()
+3.  add
+    -   Defines behavior of + operator
+
+Example Class:
+
+class Number: def init(self, value): self.value = value
+
+    def __str__(self):
+        return f"Value is {self.value}"
+
+    def __add__(self, other):
+        return Number(self.value + other.value)
+
+Test
+
+n1 = Number(10) n2 = Number(20)
+
+print(n1) print(n1 + n2)
+
+Output: Value is 10 Value is 30
+
+  ---------------
+  3. EVALUATION
+  ---------------
+
+Are the examples correct?
+
+Yes, the examples are correct: - init correctly initializes object
+attributes - str formats output properly - add correctly performs
+operator overloading
+
+Is the class implementation working?
+
+Yes, the implementation works correctly: - Objects are created
+successfully - Addition returns a new object - Output is readable using
+str
+
+Minor Observation:
+
+-   The add method assumes both objects are of the same type
+-   No error handling is included for invalid inputs
+
+  ------------
+  CONCLUSION
+  ------------
+
+In this task, AI was used to explain Python dunder methods and provide a
+working class example. The response was correct and functional. Some
+improvements like adding type checking could make the implementation
+more robust.
