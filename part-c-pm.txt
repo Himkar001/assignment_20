@@ -1,0 +1,66 @@
+PART C — INTERVIEW READY (DETAILED SOLUTION)
+
+  ----------------------------------------------------------------
+  Q1. DIFFERENCE BETWEEN NORMAL AND STANDARD NORMAL DISTRIBUTION
+  ----------------------------------------------------------------
+
+Answer: Normal distribution is a bell-shaped distribution where mean (μ)
+and standard deviation (σ) can take any values. Standard normal
+distribution is a special case where: - Mean = 0 - Standard deviation =
+1
+
+Explanation: Both have the same shape, but standard normal is just a
+normalized version of normal distribution. It is mainly used for
+comparison and standardization.
+
+  -------------------------------------
+  Q2. Z-SCORE FUNCTION IMPLEMENTATION
+  -------------------------------------
+
+Code: def z_score(x, mean, std): return (x - mean) / std
+
+Applying on dataset:
+
+data = [10, 20, 30, 40, 50]
+
+mean = sum(data) / len(data)
+
+variance = sum((x - mean) ** 2 for x in data) / len(data) std = variance
+** 0.5
+
+z_scores = [z_score(x, mean, std) for x in data]
+
+print(mean, std, z_scores)
+
+Output: Mean = 30 Standard Deviation ≈ 14.14 Z-scores ≈ [-1.41, -0.71,
+0, 0.71, 1.41]
+
+Explanation: Z-score tells how far a value is from the mean. Negative
+values are below mean, positive are above.
+
+  ------------------------
+  Q3. HYPOTHESIS TESTING
+  ------------------------
+
+Definition: Hypothesis testing is a statistical method used to make
+decisions based on sample data.
+
+Null Hypothesis (H0): - Assumes no effect or no difference Example: μ =
+50
+
+Alternative Hypothesis (H1): - Opposite of null hypothesis Example: μ ≠
+50
+
+p-value: - Probability of observing the data assuming H0 is true - Small
+p-value means strong evidence against H0
+
+Significance Level (α): - Threshold value (commonly 0.05) Decision
+Rule: - If p-value ≤ α → Reject H0 - If p-value > α → Fail to reject H0
+
+  ------------------
+  FINAL CONCLUSION
+  ------------------
+
+Normal and standard normal distributions differ only in scale. Z-score
+helps in standardizing data. Hypothesis testing is used for decision
+making using statistical evidence.

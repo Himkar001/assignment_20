@@ -1,0 +1,74 @@
+PART D — AI-AUGMENTED TASK (DETAILED SOLUTION)
+
+  -----------------------
+  1. PROMPT GIVEN TO AI
+  -----------------------
+
+Explain normal distribution, Z-score, and hypothesis testing with a
+simple Python example.
+
+  --------------
+  2. AI OUTPUT
+  --------------
+
+Explanation:
+
+Normal Distribution: A normal distribution is a bell-shaped distribution
+where most values are around the mean. It is defined by mean (μ) and
+standard deviation (σ).
+
+Z-score: Z-score measures how far a value is from the mean in terms of
+standard deviations. Formula: Z = (X - μ) / σ
+
+Hypothesis Testing: It is used to make decisions based on sample data. -
+Null hypothesis (H0): No effect - Alternative hypothesis (H1): There is
+an effect
+
+Python Code:
+
+import numpy as np
+
+data = np.random.normal(50, 10, 100)
+
+mean = np.mean(data) std = np.std(data)
+
+z = (data[0] - mean) / std
+
+print(“Mean:”, mean) print(“Std Dev:”, std) print(“Z-score:”, z)
+
+mu = 50 n = len(data)
+
+z_stat = (mean - mu) / (std / (n ** 0.5))
+
+if abs(z_stat) > 1.96: print(“Reject H0”) else: print(“Fail to reject
+H0”)
+
+Output:
+
+Mean ≈ 50 Std Dev ≈ 10 Z-score → some value Fail to reject H0
+
+  ---------------
+  3. EVALUATION
+  ---------------
+
+Is the explanation correct?
+
+Yes, the explanation is correct. - Normal distribution is explained
+properly - Z-score formula is correct - Hypothesis testing concepts are
+accurate
+
+Is the code logically correct and runnable?
+
+Yes, the code is correct and runs without errors. - Uses correct
+formulas - Produces expected output
+
+Minor Improvements: - Could include manual calculations for better
+understanding - Could improve output messages for clarity
+
+  ------------------
+  FINAL CONCLUSION
+  ------------------
+
+The AI-generated explanation and code are correct and useful. They
+successfully demonstrate key statistical concepts with working Python
+code.

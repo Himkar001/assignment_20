@@ -1,0 +1,68 @@
+PART B — STRETCH PROBLEM (DETAILED SOLUTION)
+
+  -------------------------------------------
+  1. NORMAL vs STANDARD NORMAL DISTRIBUTION
+  -------------------------------------------
+
+Code: import numpy as np import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+normal_data = np.random.normal(loc=50, scale=10, size=1000)
+standard_data = np.random.normal(loc=0, scale=1, size=1000)
+
+plt.hist(normal_data, bins=30, alpha=0.5, label=‘Normal (μ=50, σ=10)’)
+plt.hist(standard_data, bins=30, alpha=0.5, label=‘Standard Normal (μ=0,
+σ=1)’) plt.legend() plt.show()
+
+Output: Two bell-shaped curves observed.
+
+Explanation: Both distributions have the same bell shape. Normal
+distribution has mean 50 and standard deviation 10. Standard normal
+distribution has mean 0 and standard deviation 1. Only scale and
+position differ.
+
+  -------------------------------------
+  2. HYPOTHESIS TESTING ON TWO GROUPS
+  -------------------------------------
+
+Code: group1 = np.random.normal(loc=50, scale=10, size=100) group2 =
+np.random.normal(loc=55, scale=10, size=100)
+
+mean1 = sum(group1) / len(group1) mean2 = sum(group2) / len(group2)
+
+difference = mean2 - mean1
+
+print(mean1, mean2, difference)
+
+Output: Mean1 ≈ 50 Mean2 ≈ 55 Difference ≈ 5
+
+Explanation: Group 2 has higher average than Group 1. The difference
+suggests a meaningful variation between groups.
+
+  ---------------------
+  3. THEORY QUESTIONS
+  ---------------------
+
+When should you standardize data?
+
+-   When features have different scales
+-   When using models like Logistic Regression, SVM, KNN, Neural
+    Networks
+-   When distance-based calculations are used
+
+Why Z-score is important?
+
+-   Brings all features to same scale
+-   Improves model performance
+-   Helps faster convergence
+-   Prevents dominance of large values
+-   Improves interpretability
+
+  ------------------
+  FINAL CONCLUSION
+  ------------------
+
+Normal and standard normal distributions differ only in scale. Basic
+hypothesis testing helps compare groups. Standardization is essential
+for machine learning models.
